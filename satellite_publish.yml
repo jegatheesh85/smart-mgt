@@ -4,13 +4,13 @@
   gather_facts: no
   vars:
     login: &login
-      server_url: "{{ lookup('env', 'FOREMAN_SERVER') }}"
-      username: "{{ lookup('env', 'FOREMAN_USER') }}"
-      password: "{{ lookup('env', 'FOREMAN_PASSWORD') }}"
+      server_url: "https://sat-srv.aap.smartek.ae"
+      username: "admin"
+      password: "redhat"
       validate_certs: no
     organization: Default Organization
     lifecycle_environment: Dev
-    content_view: undef
+    content_view: RHEL8
     publish_timeout: 14400
     publish_retry_interval: 15
 
