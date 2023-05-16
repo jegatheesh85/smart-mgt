@@ -1,5 +1,5 @@
 ---
-- hosts: sat-host
+- hosts: sat_host
   become: yes
   vars:
     check_only: yes
