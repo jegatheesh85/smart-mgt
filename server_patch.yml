@@ -1,5 +1,5 @@
 ---
-- hosts: "env_{{ lifecycle_stage }}"
+- hosts: sat-host
   become: yes
   vars:
     check_only: yes
@@ -14,7 +14,7 @@
       name: '*'
       state: latest
       exclude: kernel*
-    check_mode: "{{ check_only }}"
+    check_mode: no
     throttle: 1
     register: updates
 
