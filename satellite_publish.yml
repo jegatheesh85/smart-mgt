@@ -8,9 +8,8 @@
       username: "{{ lookup('env', 'FOREMAN_USER') }}"
       password: "{{ lookup('env', 'FOREMAN_PASSWORD') }}"
       validate_certs: no
-    env: Dev
     organization: Default Organization
-    lifecycle_environment: "{{ content_view }}_{{ env }}"
+    lifecycle_environment: Dev
     content_view: undef
     publish_timeout: 14400
     publish_retry_interval: 15
