@@ -1,7 +1,7 @@
 ---
 controller_templates:
-  - name: SATELLITE / RHEL - Publish Content View
-    project: Automated Management
+  - name: Server publish
+    project: smart-mgt
     playbook: satellite_publish.yml
     inventory: satellite
     credentials:
@@ -19,8 +19,8 @@ controller_templates:
           choices: "{{ hostvars['sat-srv.aap.smartek.ae']['foreman_content_views'] | selectattr('name', 'match', '^RHEL.*$') | map(attribute='name') | list}}"
           required: true
           
-  - name: SATELLITE / RHEL - Promote Content View
-    project: Automated Management
+  - name: Server promote
+    project: smart-mgt
     playbook: satellite_promote.yml
     inventory: satellite
     credentials:
@@ -46,8 +46,8 @@ controller_templates:
           choices: "{{ hostvars['sat-srv.aap.smartek.ae']['lifecycle_environments'] | selectattr('name', 'match', '^RHEL.*$') | map(attribute='name') | list}}"
           required: true
           
-  - name: SERVER / RHEL7 - Patch
-    project: Automated Management
+  - name: Server patch
+    project: smart-mgt
     playbook: server_patch.yml
     inventory: satellite
     use_fact_cache: true
