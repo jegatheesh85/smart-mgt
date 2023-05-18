@@ -1,0 +1,73 @@
+---
+controller_templates:
+  - name: SATELLITE / RHEL - Publish Content View
+    project: Automated Management
+    playbook: satellite_publish.yml
+    inventory: satellite
+    credentials:
+      - satellite
+    extra_vars:
+      env: Dev
+    survey_enabled: true
+    survey:
+      name: ''
+      description: ''
+      spec:
+        - question_name: Select Content View
+          variable: content_view
+          type: multiplechoice
+          choices: "{{ hostvars['satellite.example.com']['foreman_content_views'] | selectattr('name', 'match', '^RHEL.*$') | map(attribute='name') | list}}"
+          required: true
+          
+  - name: SATELLITE / RHEL - Promote Content View
+    project: Automated Management
+    playbook: satellite_promote.yml
+    inventory: satellite
+    credentials:
+      - satellite
+    survey_enabled: true
+    survey:
+      name: ''
+      description: ''
+      spec:
+        - question_name: Select Content View
+          variable: content_view
+          type: multiplechoice
+          choices: "{{ hostvars['satellite.example.com']['foreman_content_views'] | selectattr('name', 'match', '^RHEL.*$') | map(attribute='name') | list}}"
+          required: true
+        - question_name: Current Lifecycle Environment
+          variable: current_lifecycle_environment
+          type: multiplechoice
+          choices: "{{ hostvars['satellite.example.com']['lifecycle_environments'] | selectattr('name', 'match', '^RHEL.*$') | map(attribute='name') | list}}"
+          required: true
+        - question_name: Next Lifecycle Environment
+          variable: lifecycle_environment
+          type: multiplechoice
+          choices: "{{ hostvars['satellite.example.com']['lifecycle_environments'] | selectattr('name', 'match', '^RHEL.*$') | map(attribute='name') | list}}"
+          required: true
+          
+  - name: SERVER / RHEL7 - Patch
+    project: Automated Management
+    playbook: server_patch.yml
+    inventory: satellite
+    use_fact_cache: true
+    credentials:
+      - host_cred
+    limit: ''
+    survey_enabled: true
+    survey:
+      name: ''
+      description: ''
+      spec:
+        - question_name: Select Environment
+          type: multiplechoice
+          variable: lifecycle_stage
+          choices: "{{ hostvars['satellite.example.com']['lifecycle_environments'] | selectattr('name', 'match', '^RHEL.*$') | map(attribute='name') | list}}"
+          required: true
+        - question_name: Check
+          type: multiplechoice
+          variable: check_only
+          choices:
+            - 'yes'
+            - 'no'
+          required: true
