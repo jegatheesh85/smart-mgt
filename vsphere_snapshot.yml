@@ -1,0 +1,20 @@
+---
+- name: vm snapshot demo
+  hosts: localhost
+  become: false
+  gather_facts: false
+  collections:
+    - community.vmware
+  tasks:
+    - name: create snapshot
+      vmware_guest_snapshot:
+        hostname: https://portal.vc.opentlc.com/ui/app/
+        username: sandbox-jwwt8@vc.opentlc.com
+        password: lArri08ShRg3
+        datacenter: SDDC-Datacenter
+        validate_certs: false
+        name: bastion
+        state: present
+        snapshot_name: "Ansible Managed Snapshot"
+        folder: Workloads/sandbox-jwwt8
+        description: "This snapshot is created by Ansible Playbook"
