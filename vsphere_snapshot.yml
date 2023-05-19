@@ -8,9 +8,9 @@
   tasks:
     - name: create snapshot
       vmware_guest_snapshot:
-        hostname: https://portal.vc.opentlc.com/ui/app/
-        username: sandbox-jwwt8@vc.opentlc.com
-        password: lArri08ShRg3
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
         datacenter: SDDC-Datacenter
         validate_certs: false
         name: bastion
