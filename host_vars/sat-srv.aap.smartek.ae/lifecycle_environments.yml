@@ -1,7 +1,0 @@
----
-lifecycle_environments:
-  # Red Hat Enterprise Linux 8
-  - name: "Dev"
-    prior: "Library"
-  - name: "QA"
-    prior: "Dev"
