@@ -11,10 +11,10 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        datacenter: SDDC-Datacenter
+        datacenter: "{{ vcenter_datacenter }}"
         validate_certs: false
         name: bastion
         state: present
         snapshot_name: "Ansible Managed Snapshot"
-        folder: Workloads/sandbox-jwwt8
+        folder:"{{ vcenter_folder }}"
         description: "This snapshot is created by Ansible Playbook"
