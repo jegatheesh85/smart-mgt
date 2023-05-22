@@ -16,5 +16,5 @@
         name: bastion
         state: present
         snapshot_name: "Ansible Managed Snapshot"
-        folder:"{{ vcenter_folder }}"
+        folder: "{{ vcenter_folder }}"
         description: "This snapshot is created by Ansible Playbook"
