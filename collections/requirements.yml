@@ -1,2 +1,4 @@
+--- 
 collections: 
-  - redhat.satellite
+- name: redhat.satellite 
+  version: '>=3.10.0'
