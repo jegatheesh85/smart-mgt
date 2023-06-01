@@ -4,9 +4,9 @@
   gather_facts: no
   vars:
     login: &login
-      server_url: 
+      server_url: http://rnd-rhupdate.oabrnd.com
       username: admin
-      password: 
+      password: P@$$w0rd$1
       validate_certs: no
     organization: Default Organization
     lifecycle_environment: "{{ env }}"
