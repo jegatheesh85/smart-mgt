@@ -4,9 +4,9 @@
   gather_facts: no
   vars:
     login: &login
-      server_url: http://10.101.46.27
+      server_url: 
       username: admin
-      password: P@$$w0rd$1
+      password: 
       validate_certs: no
     organization: Default Organization
     lifecycle_environment: "{{ env }}"
