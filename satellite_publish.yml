@@ -4,7 +4,7 @@
   gather_facts: no
   vars:
     login: &login
-      server_url: https://sat-srv.aap.smartek.ae
+      server_url: 10.101.46.27
       username: admin
       password: redhat
       validate_certs: no
