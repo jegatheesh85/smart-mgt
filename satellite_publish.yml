@@ -8,7 +8,7 @@
       username: admin
       password: P@$$w0rd$1
       validate_certs: no
-    organization: Default Organization
+    organization: OAB
     lifecycle_environment: "{{ env }}"
     content_view: undef
     publish_timeout: 14400
