@@ -19,5 +19,5 @@
       <<: *login
       content_view: "{{ content_view }}"
       organization: "{{ organization }}"
-      lifecycle_environments: "{{ lifecycle_environment }}"
+      lifecycle_environment: "{{ lifecycle_environment }}"
       current_lifecycle_environment: "{{ current_lifecycle_environment }}"
