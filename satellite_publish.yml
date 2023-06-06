@@ -8,7 +8,7 @@
       username: adx
       password: xxx
       validate_certs: no
-    organization: OAB
+    organization: xxx
     lifecycle_environment: "{{ env }}"
     content_view: undef
     publish_timeout: 14400
