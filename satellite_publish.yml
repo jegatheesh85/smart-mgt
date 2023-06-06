@@ -4,9 +4,9 @@
   gather_facts: no
   vars:
     login: &login
-      server_url: http://10.101.46.27
-      username: admin
-      password: P@$$w0rd$1
+      server_url: http://xxx.x..x.x.
+      username: adx
+      password: xxx
       validate_certs: no
     organization: OAB
     lifecycle_environment: "{{ env }}"
