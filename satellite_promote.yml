@@ -4,7 +4,7 @@
   gather_facts: no
   vars:
     login: &login
-      server_url: https://10.101.4.6.27
+      server_url: http://10.101.4.6.27
       username: admin
       password: P@$$w0rd$1
       validate_certs: no
