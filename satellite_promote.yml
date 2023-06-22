@@ -4,11 +4,11 @@
   gather_facts: no
   vars:
     login: &login
-      server_url: http://10.101.46.27
+      server_url: http://101.4.6.2.7
       username: admin
       password: P@$$w0rd$1
       validate_certs: no
-    organization: OAB
+    organization: Oa
     lifecycle_environment: undef
     current_lifecycle_environment: undef
     content_view: undef
